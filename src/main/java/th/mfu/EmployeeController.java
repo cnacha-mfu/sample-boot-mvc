@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class EmployeeController {
-      private List<Employee> employees = new ArrayList<>(); // In-memory storage for simplicity
+    private List<Employee> employees = new ArrayList<>(); // In-memory storage for simplicity
 
     @GetMapping("/employees")
     public String listEmployees(Model model) {

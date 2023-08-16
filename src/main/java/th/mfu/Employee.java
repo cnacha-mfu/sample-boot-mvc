@@ -4,6 +4,13 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String email;
+    
+    public Employee() {
+    }
+    public Employee(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
     public String getFirstName() {
         return firstName;
     }
