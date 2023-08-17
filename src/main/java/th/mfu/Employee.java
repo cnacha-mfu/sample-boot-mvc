@@ -1,12 +1,17 @@
 package th.mfu;
 
+import java.util.Date;
+
 public class Employee {
+    private int id;
     private String firstName;
     private String lastName;
     private String email;
+    private Date birthday;
     
     public Employee() {
     }
+    
     public Employee(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -29,6 +34,24 @@ public class Employee {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    
 
     
 }
