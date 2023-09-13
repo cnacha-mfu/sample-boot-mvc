@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import th.mfu.domain.Employee;
+
 @Controller
 public class EmployeeController {
     private int nextId = 1;
