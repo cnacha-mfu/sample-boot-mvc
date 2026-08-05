@@ -18,37 +18,35 @@ public class BookController {
 
     @GetMapping("/books")
     public String listBooks(Model model) {
-        // TODO: add books.values() to the model as attribute "books"
-        // TODO: return the "list-book" template
-        return "";
+        model.addAttribute("books", books.values());
+        return "list-book";
     }
 
     @GetMapping("/add-book")
     public String addABookForm(Model model) {
-        // TODO: add a blank new Book() to the model as attribute "book"
-        // TODO: return the "add-book-form" template
-        return "";
+        model.addAttribute("book", new Book());
+        return "add-book-form";
     }
 
     @PostMapping("/books")
     public String saveBook(@ModelAttribute Book book) {
-        // TODO: set the book's id to nextId, put it in the map, increment nextId
-        // TODO: redirect to the book list  (return "redirect:/books")
-        return "";
+        book.setId(nextId);
+        books.put(nextId, book);
+        nextId++;
+        return "redirect:/books";
     }
 
     @GetMapping("/delete-book/{id}")
     public String deleteBook(@PathVariable int id) {
-        // TODO: remove the book with this id from the map
-        // TODO: redirect to the book list
-        return "";
+        books.remove(id);
+        return "redirect:/books";
     }
 
     @GetMapping("/delete-book")
     public String removeAllBooks() {
-        // TODO: clear the map and reset nextId to 1
-        // TODO: redirect to the book list
-        return "";
+        books.clear();
+        nextId = 1;
+        return "redirect:/books";
     }
 
 }
