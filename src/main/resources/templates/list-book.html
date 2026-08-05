@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book List</title>
+</head>
+<body>
+    <h2>Books</h2>
+
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th></th>
+        </tr>
+        <!-- th:each repeats this row once per book in the model attribute "books" -->
+        <tr th:each="book : ${books}">
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.author}"></td>
+            <td><a th:href="@{'/delete-book/' + ${book.id}}">delete</a></td>
+        </tr>
+    </table>
+
+    <p>
+        <a href="/add-book">Add a book</a> |
+        <a href="/delete-book">Delete all</a>
+    </p>
+</body>
+</html>

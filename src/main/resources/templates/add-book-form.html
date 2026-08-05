@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+</head>
+<body>
+    <h2>Add a book</h2>
+
+    <!-- th:object binds the form to the model attribute "book";
+         th:field fills each input into that object's property -->
+    <form th:action="@{/books}" th:object="${book}" method="post">
+        <p>Title: <input type="text" th:field="*{title}" /></p>
+        <p>Author: <input type="text" th:field="*{author}" /></p>
+        <p><button type="submit">Save</button></p>
+    </form>
+
+    <p><a href="/books">Back to list</a></p>
+</body>
+</html>
